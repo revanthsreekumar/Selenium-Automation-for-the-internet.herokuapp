@@ -27,7 +27,8 @@ public class DragAndDrop extends base{
 
 	@BeforeTest
 	public static void initialize() throws IOException {
-		ExtentHtmlReporter spark = new ExtentHtmlReporter(MethodHandles.lookup().lookupClass()+"ExtentReports.html");
+		String projectPath = System.getProperty("user.dir");
+		ExtentHtmlReporter spark = new ExtentHtmlReporter(projectPath+"\\extentReports\\"+MethodHandles.lookup().lookupClass()+"ExtentReports.html");
 		extent = new ExtentReports();
 		extent.attachReporter(spark);
 		test =  extent.createTest("Drag and Drop Test Case","Drag and drop checked");

@@ -26,7 +26,8 @@ public class entryAd extends base{
 
 	@BeforeTest
 	public static void initialize() throws IOException {
-		ExtentHtmlReporter spark = new ExtentHtmlReporter(MethodHandles.lookup().lookupClass()+"ExtentReports.html");
+		String projectPath = System.getProperty("user.dir");
+		ExtentHtmlReporter spark = new ExtentHtmlReporter(projectPath+"\\extentReports\\"+MethodHandles.lookup().lookupClass()+"ExtentReports.html");
 		extent = new ExtentReports();
 		extent.attachReporter(spark);
 		test =  extent.createTest("entry ad Test Case","");

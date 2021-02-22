@@ -1,6 +1,7 @@
 package AllTests;
 import java.io.IOException;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import resources.base;
 
@@ -13,7 +14,8 @@ public class sample extends base{
 		String urlAddr = prop.getProperty("url");
 		//System.out.println(urlAddr);
 		driver.get(urlAddr);
-		
+		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight);");
+
 
 	}
 

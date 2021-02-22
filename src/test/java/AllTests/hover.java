@@ -26,7 +26,8 @@ public class hover extends base{
 
 	@BeforeTest
 	public static void initialize() throws IOException {
-		ExtentHtmlReporter spark = new ExtentHtmlReporter(MethodHandles.lookup().lookupClass()+"ExtentReports.html");
+		String projectPath = System.getProperty("user.dir");
+		ExtentHtmlReporter spark = new ExtentHtmlReporter(projectPath+"\\extentReports\\"+MethodHandles.lookup().lookupClass()+"ExtentReports.html");
 		extent = new ExtentReports();
 		extent.attachReporter(spark);
 		test =  extent.createTest("hover Test case","");
@@ -43,12 +44,15 @@ public class hover extends base{
 		Thread.sleep(2000);
 		List<WebElement> images = driver.findElements(By.cssSelector(".figure"));
 		Actions action = new Actions(driver);
-		
-			action.moveToElement(images).perform();
-			System.out.println(images.findElement(By.cssSelector(".figcaption")).isDisplayed());
+		for(WebElement image:images) {
+			action.moveToElement(image).perform();
+			System.out.println(image.findElement(By.cssSelector(".figcaption")).isDisplayed());
 			
-				
-       test.pass("hover checked");
+		}		
+		
+
+
+		test.pass("hover checked");
 		Thread.sleep(3000);
 	}
 	@AfterTest
