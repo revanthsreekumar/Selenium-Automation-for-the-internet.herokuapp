@@ -66,6 +66,7 @@ public class AddRemoveElements extends base{
 		test.pass("Added "+n+" Elements");
 		validateRemoveElements(n, driver); //Remove elements
 		test.pass("Removed "+n+" elements");
+		System.out.println("Test executed");
 
 	}
 	@AfterTest
