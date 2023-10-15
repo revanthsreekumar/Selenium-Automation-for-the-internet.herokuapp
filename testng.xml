@@ -3,10 +3,10 @@
 <suite name="Suite" parallel="none">
   <test name="Test">
     <classes>
-      <class name="AllTests.AddRemoveElements"/>
-      <class name="AllTests.BrokenImage.java"/>
-      <class name="AllTests.DisappearingElements.java"/>
-      <class name="AllTests.DragAndDrop.java"/>
+      <class name="AllTests.App"/>
+      <class name="AllTests.BrokenImage"/>
+      <class name="AllTests.DisappearingElements"/>
+      <class name="AllTests.DragAndDrop"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
